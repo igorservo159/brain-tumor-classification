@@ -100,6 +100,18 @@ weighted avg       0.72      0.72      0.72       656
 ![cnn0_confusion_matrix.png](./imgs/cnn0_confusion_matrix.png)
 > Confusion matrix on first model
 
+### Finding a Good Learning Rate
+
+Using the torch_lr_finder library, it was possible to find a suggested learning rate of `6.83E-04`. It was tested on [this notebook](./Finding_Learning_Rate.ipynb).
+
+![learning_rate.png](./imgs/learning_rate.png)
+> Learning rate suggestion
+
+Using this LR, we got a validation accuracy of 73.28% and the following testing results.
+
+![cnn_confusion_matrix.png](./imgs/cnn_confusion_matrix.png)
+> Confusion matrix of a new learning rate varitation
+
 ## Using the Base Model with Features Variation
 
 Here, we used the same four convolutional layers as before, but by this time, changing the input/output channels ratio to use more filters and get a few more information through the layers. It incurred in a notable increase on the parameters count, but a small change on performance.
